@@ -1,0 +1,56 @@
+helen.nagel@tthk.ee
+
+Leitud vead:
+
+1. in activity_plan.xml -
+   1.1 tools:context=".PlansActivity" - must be PlanActivity
+   1.2  //</LinearLayout> - wrong place!
+   1.3    xmlns:app="http://schemas.android.com/apk/res-auto" - not used more, deleted
+   1.4    android:numColumns="44" /> -- must be 4
+
+
+
+2. in activity_main.xml:
+   2.1    xmlns:app="http://schemas.android.com/apk/res-auto" - not used more, deleted
+   2.3    android:layout_weight="match_parent"  - must be android:layout_width="match_parent" 
+
+3.  in PlanActivity:
+   3.1  // not m!!  - must be n
+   3.2 - 3.5    getString(R.id.per))  - must be getString(R.string.per))
+
+
+
+
+
+
+4. in MainActivity:
+   4.1  string data must be in ""
+   4.2  string data must be in ""
+   4.3  if (Loan.getInstances().getPeriods() > 0)  - must be getInstance
+   4.4 - 4.9    setTextTo(""); -- must be setText("")
+   4.10   if (year <= 0 && rateyear > 6) -- must be  if (year <= 0 && year > 6) -- must be
+          yearInt = Integer.parseInt(txtYear.getText().toString().trim()); ;
+            if ( yearInt <= 0 && yearInt > 6) throw new Exception(); 
+
+   4.11    if (term <= 0 || term > 120)  -- must be
+             termInt = Integer.parseInt(txtTerm.getText().toString().trim()); ;
+            if (termInt <= 0 || termInt > 120) throw new Exception();
+   4.12     (rate / 100 / term); -- must be (rate / 100 / termInt);
+   4.13      .setPeriods(year * term);   -- must be  .setPeriods(yearInt * termInt);
+   4.14     function disable(txtPaym) is not present!! 
+
+
+
+
+5.  in Loan.java:
+   5.1  public double principal = 0; - must be private
+   5.2  public double interestRate = 0;  - must be private
+   5.3   {return outstanding(n - 1) * interestRate;}  -{ wrong place of }
+
+
+
+6.  in AndroidManifest:
+    6.1  added <activity       
+            android:name=".PlanActivity">
+        </activity>
+     6.2  must be android:label="@string/app_name" 

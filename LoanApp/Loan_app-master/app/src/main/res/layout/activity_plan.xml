@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PlanActivity">  <!--issue 1.1  was ".PlansActivity" -->
+    <!-- issue1.3  deleted  string :   xmlns:app="http://schemas.android.com/apk/res-auto"  -->
+<GridView
+android:id="@+id/grid"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:stretchMode="columnWidth"
+android:numColumns="4" />  <!-- issue 1.4 -->
+
+</LinearLayout>  <!--issue 1.2  right place-->
